@@ -10,11 +10,18 @@ var Video = mongoose.model('Video', videoSchema);
 
 var getCatVids = function(cat) {
     return function(req, res) {
+        console.log('test');
         Video.videosByCategoryAlpha(cat, function(err, vidObj) {
+            console.log('yay');
             if (err) {
-              res.status(500).json({status: "error"});
+                res.status(500).render('words',{status: "error"});
             } else {
-              res.status(200).json({status: 'success', vids: vidObj})
+                console.log(vidObj);
+                res.status(200).render('words',{
+                    status: 'success',
+                    title: cat.charAt(0).toUpperCase() + cat.slice(1) + " Videos",
+                    vids: vidObj
+                });
             }
         });
     }
@@ -24,13 +31,9 @@ exports.index = function(req, res){
     res.render('splash', { title: 'Kenyan Sign Language Directory' });
 };
 
-exports.biologyVids = getCatVids('biology');
-
-exports.mathVids = getCatVids('math');
-
-exports.chemistryVids = getCatVids('chemistry');
-
-exports.physicsVids = getCatVids('physics');
+exports.browseCat = function(req, res) {
+    getCatVids(req.params.category)(req,res);
+}
 
 exports.browse = function (req,res) {
     res.render('browse', {title: 'Kenyan Sign Language Directory'})
@@ -64,7 +67,7 @@ exports.quiz = function(req,res) {
 };
 
 exports.admin = function(req, res) {
-    res.render('admin', {title: "Login to KSL Admin"});
+    res.render('admin', {layout: 'main-no-nav', title: "Login to KSL Admin"});
 }
 // exports.quizVids = function(req,res) {
 //     var promises = [];

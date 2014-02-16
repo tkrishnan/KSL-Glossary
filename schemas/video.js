@@ -16,7 +16,8 @@ videoSchema.statics.videosByCategory = function(cat,cb) {
 // Returns an object 
 videoSchema.statics.videosByCategoryAlpha = function(cat, cb) {
     var vidObj = {};
-    this.find({categories: cat }, function(err, vids) {
+    console.log('what');
+    var videosByCategoryCB = function(err, vids) {
         if (err) {
             cb('error');
         } else {
@@ -24,15 +25,14 @@ videoSchema.statics.videosByCategoryAlpha = function(cat, cb) {
                 var vid = vids[i],
                 firstLetter = vid.word[0].toLowerCase();
 
-                firstLetter in vidObj ? vidObj.firstLetter.push : vidObj.firstLetter = [vid];
-            }
-            for (var key in Object.keys(vidObj)) {
-                vidObj[key].sort();
+                firstLetter in vidObj ? vidObj[firstLetter].push : vidObj[firstLetter] = [vid];
             }
 
             cb(null, vidObj);
         }
-    });
+    };
+
+    cat === "all" ? this.find({}, videosByCategoryCB).setOptions({sort: 'word'}) : this.find({categories: cat }, videosByCategoryCB).setOptions({sort: 'word'});
 }
 
 exports.videoSchema = videoSchema;
