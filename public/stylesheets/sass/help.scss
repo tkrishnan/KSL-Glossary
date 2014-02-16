@@ -1,6 +1,6 @@
 @import "globals";
 
-.splash {
+.help {
 	background: {
 		color: black;
 		repeat: no-repeat;
@@ -12,4 +12,10 @@
 	z-index: 1;
 
 	@include somewhat-black-bg('../images/kenyakidclassroom.jpg');
+
+	.help-title {
+		color: white;
+		font-size: 90px;
+		margin-left: 230px;
+	}
 }
