@@ -55,6 +55,9 @@ exports.quiz = function(req,res) {
     res.status(200).render('quiz', {status: 'success', selectMap: selectMap});
 };
 
+exports.admin = function(req, res) {
+    res.render('admin', {title: "Login to KSL Admin"});
+}
 // exports.quizVids = function(req,res) {
 //     var promises = [];
 //     for (var param in req.query ) {
