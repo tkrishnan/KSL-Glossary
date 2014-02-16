@@ -5,11 +5,52 @@
 		color: black;
 		repeat: no-repeat;
 		position: center;
-		size: cover;
+		size: contain;
 		//image: url('../images/kenyaschoolkidsroad.jpg');
 	}
 
 	z-index: 1;
 
 	@include somewhat-black-bg('../images/kenyaschoolkidsroad.jpg');
+
+	.logo {
+		margin-top: 80px;
+		margin-left: 50px;
+		margin-bottom: 30px; 
+		.large-logo {
+			display: inline-block;
+			width:80px;
+			height:80px;
+		}
+		.logo-text {
+			display: inline-block;
+			color: white;
+			font: exo-dark-font;
+			font-size: 90px;
+		}
+	}
+
+	.search-bar {
+		.search {
+			margin-left: 125px;
+			margin-bottom: 30px;
+		}
+	}
+
+	.browse-link {
+		display: inline-block;
+		color: white;
+		font: exo-dark-font;
+		font-size: 40px;
+		margin-left: 250px;
+		a {
+			color: white;
+			text-decoration: none;
+		}
+		a:hover {
+			color: white;
+			text-decoration: underline;
+		}
+		
+	}
 }
