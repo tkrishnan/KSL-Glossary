@@ -35,4 +35,8 @@ videoSchema.statics.videosByCategoryAlpha = function(cat, cb) {
     cat === "all" ? this.find({}, videosByCategoryCB).setOptions({sort: 'word'}) : this.find({categories: cat }, videosByCategoryCB).setOptions({sort: 'word'});
 }
 
+videoSchema.statics.allVideos = function(cb) {
+    this.find({}, cb).setOptions({sort: "word"});
+}
+
 exports.videoSchema = videoSchema;

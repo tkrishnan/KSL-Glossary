@@ -31,6 +31,7 @@ exports.index = function(req, res){
 };
 
 exports.browseCat = function(req, res) {
+    //if (req.params.category not in catA)
     getCatVids(req.params.category)(req,res);
 }
 
@@ -67,6 +68,39 @@ exports.quiz = function(req,res) {
 
 exports.admin = function(req, res) {
     res.render('admin', {layout: 'main-no-nav', title: "Login to KSL Admin"});
+}
+
+exports.adminHome = function(req, res) {
+    // if (req.session.passport.user === undefined) {
+    //     res.redirect('/login');
+    // } else {
+    //     res.render('adminHome', {title: "Welcome Admin!"});
+    // }
+
+    Video.allVideos(function(err, vidObj) {
+        if (err) {
+            res.status(500);
+        } else {
+            res.render('adminHome', {title: "Admin Interface", vids: vidObj, layout: "main-no-nav"});
+        }
+    })
+        
+}
+
+exports.letterVids = function(req, res) {
+    var l = req.query.letter;
+    var c = req.query.category;
+
+    Video.videosByCategoryAlpha(c, function(err, vidObj) {
+        if (err) {
+            res.status(500).json({status: "error"});
+        } else {
+            res.json({
+                status: 'success',
+                vids: vidObj[l],
+            });
+        }
+    });
 }
 // exports.quizVids = function(req,res) {
 //     var promises = [];
