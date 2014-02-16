@@ -36,6 +36,9 @@ exports.browse = function (req,res) {
     res.render('browse', {title: 'Kenyan Sign Language Directory'})
 };
 
+exports.words = function (req, res) {
+    res.render('words', {title: 'Kenyan Sign Language Directory'})
+};
 
 exports.quiz = function(req,res) {
     var selectMap = {
