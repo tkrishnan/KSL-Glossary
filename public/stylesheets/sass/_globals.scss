@@ -1,0 +1,54 @@
+@font-face {
+  font-family: exo;
+  src: url("../Exo2.0-ExtraLight.otf");
+}
+
+@font-face {
+  font-family: exo;
+  src: url("../Exo2.0-Light.otf");
+  font-weight: bold;
+}
+
+.exo-font {
+  font-family: exo;
+}
+
+.exo-dark-font {
+  font-family: exo;
+  font-weight: bold;
+}
+
+body,
+.pure-g [class *= "pure-u"],
+.pure-g-r [class *= "pure-u"] {
+  font-family: exo;
+  margin: 0px;
+}
+
+@mixin fade-black-bottom-bg($imageurl) {
+  background-image: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.65) 100%), url($imageurl); /* FF3.6+ */
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,0.65))), url($imageurl); /* Chrome,Safari4+ */
+  background-image: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%), url($imageurl); /* Chrome10+,Safari5.1+ */
+  background-image: -o-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%), url($imageurl); /* Opera 11.10+ */
+  background-image: -ms-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%), url($imageurl); /* IE10+ */
+  background-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%), url($imageurl); /* W3C */
+}
+
+@mixin all-black-bg($imageurl) {
+  background: -moz-linear-gradient(top, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.65) 100%), url($imageurl); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.65)), color-stop(100%,rgba(0,0,0,0.65))), url($imageurl); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, rgba(0,0,0,0.65) 0%,rgba(0,0,0,0.65) 100%), url($imageurl); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, rgba(0,0,0,0.65) 0%,rgba(0,0,0,0.65) 100%), url($imageurl); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, rgba(0,0,0,0.65) 0%,rgba(0,0,0,0.65) 100%), url($imageurl); /* IE10+ */
+  background: linear-gradient(to bottom, rgba(0,0,0,0.65) 0%,rgba(0,0,0,0.65) 100%), url($imageurl); /* W3C */
+}
+
+
+@mixin somewhat-black-bg($imageurl) {
+  background: -moz-linear-gradient(top, rgba(0,0,0,0.30) 0%, rgba(0,0,0,0.30) 100%), url($imageurl); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.30)), color-stop(100%,rgba(0,0,0,0.30))), url($imageurl); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, rgba(0,0,0,0.30) 0%,rgba(0,0,0,0.30) 100%), url($imageurl); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, rgba(0,0,0,0.30) 0%,rgba(0,0,0,0.30) 100%), url($imageurl); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, rgba(0,0,0,0.30) 0%,rgba(0,0,0,0.30) 100%), url($imageurl); /* IE10+ */
+  background: linear-gradient(to bottom, rgba(0,0,0,0.30) 0%,rgba(0,0,0,0.30) 100%), url($imageurl); /* W3C */
+}
