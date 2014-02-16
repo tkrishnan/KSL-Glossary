@@ -57,6 +57,7 @@ app.get('/words', routes.words);
 app.get('/about', routes.about);
 app.get('/help', routes.help);
 app.get('/admin', routes.admin);
+app.get('/letterVids', routes.letterVids);
 
 app.get('/:category', routes.browseCat);
 

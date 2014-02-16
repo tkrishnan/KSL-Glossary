@@ -9,9 +9,11 @@ $(function(){
 		$(this).addClass("pure-menu-selected");
 		$(".list ul[data-letter="+letter+"]").show();
 		$(".list ul[data-letter="+curr_l+"]").hide();
-		car l = letter.toLowerCase();
+		var l = letter.toLowerCase();
+		console.log("first");
 		$.get('/letterVids', {letter: l, category:c},
 			function(data) {
+				console.log("second");
 				if (data.success === "error"){
 					console.log("ERROR");
 				} else {
@@ -19,6 +21,8 @@ $(function(){
 					var template = Handlebars.compile(source);
 					var context = data;
 					var html = template(context);
+					console.log("third");
+					console.log("HEY"+html);
 					$('.videos').html(html);
 				}
 			}, "json");
