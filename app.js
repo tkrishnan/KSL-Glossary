@@ -32,9 +32,7 @@ if ('development' == app.get('env')) {
 
 app.get('/', routes.index);
 
-app.get('/register', routes.register);
-
-app.get('/profile-form', routes.profileForm);
+app.get('/browse', routes.browse);
 
 
 http.createServer(app).listen(app.get('port'), function(){

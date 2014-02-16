@@ -2,13 +2,13 @@
 /*
  * GET home page.
  */
-
+var mongoose = require('mongoose');
 var videoSchema = require('../schemas/video').videoSchema;
 
 
 var Video = mongoose.model('Video', videoSchema);
 
-function getCatVids = function(cat) {
+var getCatVids = function(cat) {
     return function(req, res) {
         Video.videosByCategoryAlpha(cat, function(err, vidObj) {
             if (err) {
@@ -36,12 +36,6 @@ exports.browse = function (req,res) {
     res.render('browse', {title: 'Kenyan Sign Language Directory'})
 };
 
-var promiseMap = {
-    biology: Video.videosByCategory('biology'),
-    math: Video.videosByCategory('math'),
-    chemistry: Video.videosByCategory('chemistry'),
-    physics: Video.videosByCategory('physics')
-};
 
 exports.quiz = function(req,res) {
     var selectMap = {
@@ -58,21 +52,21 @@ exports.quiz = function(req,res) {
     res.status(200).render('quiz', {status: 'success', selectMap: selectMap});
 };
 
-exports.quizVids = function(req,res) {
-    var promises = [];
-    for (var param in req.query ) {
-        if (param in promiseMap) {
+// exports.quizVids = function(req,res) {
+//     var promises = [];
+//     for (var param in req.query ) {
+//         if (param in promiseMap) {
 
-        }
-    }
-    Promise.all(promises).then(function(vidLists) {
-        var allVids = [];
-        allVids = allVids.concat(vidLists);
+//         }
+//     }
+//     Promise.all(promises).then(function(vidLists) {
+//         var allVids = [];
+//         allVids = allVids.concat(vidLists);
 
-        res.status(200).json({status: 'success', vids: vidLists});
-    }).catch(function() {
-        res.status(500).json({status: 'err'});
-    }); 
-};
+//         res.status(200).json({status: 'success', vids: vidLists});
+//     }).catch(function() {
+//         res.status(500).json({status: 'err'});
+//     }); 
+// };
 
 

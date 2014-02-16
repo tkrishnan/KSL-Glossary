@@ -10,17 +10,8 @@ var videoSchema = new Schema({
 });
 
 // List of videos of a specific category
-videoSchema.statics.videosByCategory = function(cat) {
-    return new Promise(function(resolve, reject) {
-        this.find({categories: cat }, function(err, vids) {
-            if (err) {
-                reject('errror');
-            } else {
-                resolve(vids);
-            }
-        });
-    });
-    
+videoSchema.statics.videosByCategory = function(cat,cb) {
+    this.find({categories: cat }, cb);
 }
 
 // Returns an object 
