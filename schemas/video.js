@@ -25,7 +25,7 @@ videoSchema.statics.videosByCategoryAlpha = function(cat, cb) {
                 var vid = vids[i],
                 firstLetter = vid.word[0].toLowerCase();
 
-                firstLetter in vidObj ? vidObj[firstLetter].push : vidObj[firstLetter] = [vid];
+                firstLetter in vidObj ? vidObj[firstLetter].push(vid) : vidObj[firstLetter] = [vid];
             }
 
             cb(null, vidObj);
