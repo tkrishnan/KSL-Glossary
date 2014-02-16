@@ -14,15 +14,24 @@ var db= require('./db');
 
 passport.use(new LocalStrategy(
     function(username, password, done) {
-        if (username !== "kcl-admin") {
-            return done(null, false, { message: 'Incorrect username.' });
+        if (username === "kcl-admin" && password === 'testtest') {
+            console.log('yo');
+            return done(null, {username: "kcl-admin"});
         }
-        if (!user.validPassword(password)) {
-            return done(null, false, { message: 'Incorrect password.' });
-        }
-        return done(null, user);
+
+        return done(null, false);
+
+
     }
 ));
+
+passport.serializeUser(function(user, done) {
+    done(null, user.username);
+});
+
+passport.deserializeUser(function(user, done) {
+    done(null, {username: username});
+});
 
 var app = express();
 
@@ -35,13 +44,16 @@ app.set('view engine', 'handlebars');
 app.use(express.favicon());
 app.use(express.logger('dev'));
 app.use(express.json());
+app.use(express.cookieParser());
+app.use(express.bodyParser());
+app.use(express.session({secret:"happy999999"}));
+app.use(passport.initialize());
+app.use(passport.session());
 app.use(express.urlencoded());
 app.use(express.methodOverride());
 app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public')));
-// app.use(express.session({secret:"happy"}));
-// app.use(passport.initialize());
-// app.use(passport.session());
+
 
 // development only
 if ('development' == app.get('env')) {
@@ -57,6 +69,15 @@ app.get('/words', routes.words);
 app.get('/about', routes.about);
 app.get('/help', routes.help);
 app.get('/admin', routes.admin);
+
+
+
+app.post('/login',
+  passport.authenticate('local', { successRedirect: '/adminHome',
+                                   failureRedirect: '/admin'})
+);
+
+app.get('/adminHome', routes.adminHome);
 
 app.get('/:category', routes.browseCat);
 
