@@ -25,6 +25,9 @@ body,
   margin: 0px;
 }
 
+div#nav-bar {
+  border-bottom: 1px solid #565D64;
+}
 div#nav-bar .navbar-logo {
   display: inline-block;
 }
@@ -99,6 +102,5 @@ div#nav-bar ul li {
   text-decoration: none;
 }
 .splash .browse-link a:hover {
-  color: white;
-  text-decoration: underline;
+  color: #9C2517;
 }
