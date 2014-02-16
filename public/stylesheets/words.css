@@ -1,0 +1,63 @@
+@font-face {
+  font-family: exo;
+  src: url("../Exo2.0-ExtraLight.otf");
+}
+
+@font-face {
+  font-family: exo;
+  src: url("../Exo2.0-Light.otf");
+  font-weight: bold;
+}
+
+.exo-font {
+  font-family: exo;
+}
+
+.exo-dark-font {
+  font-family: exo;
+  font-weight: bold;
+}
+
+body,
+.pure-g [class*="pure-u"],
+.pure-g-r [class*="pure-u"] {
+  font-family: exo;
+  margin: 0px;
+}
+
+div#nav-bar {
+  border-bottom: 1px solid #565D64;
+}
+div#nav-bar .navbar-logo {
+  display: inline-block;
+}
+div#nav-bar .navbar-logo img {
+  width: 25px;
+  height: 25px;
+}
+div#nav-bar .navbar-logo .navbar-logo-text {
+  font-size: 30px;
+  display: inline-block;
+}
+div#nav-bar .nav-search {
+  display: inline-block;
+  margin-left: 250px;
+  margin-bottom: 10px;
+}
+div#nav-bar ul {
+  float: right;
+}
+div#nav-bar ul li {
+  margin-top: 10px;
+}
+
+.title-section {
+  margin-top: 20px;
+}
+
+.title {
+  color: #565D64;
+  font: exo-dark-font;
+  font-size: 45px;
+  text-align: center;
+}
