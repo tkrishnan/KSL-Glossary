@@ -39,9 +39,9 @@ app.use(express.urlencoded());
 app.use(express.methodOverride());
 app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(express.session());
-app.use(passport.initialize());
-app.use(passport.session());
+// app.use(express.session({secret:"happy"}));
+// app.use(passport.initialize());
+// app.use(passport.session());
 
 // development only
 if ('development' == app.get('env')) {
