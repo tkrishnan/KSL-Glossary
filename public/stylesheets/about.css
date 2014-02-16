@@ -1,0 +1,72 @@
+@font-face {
+  font-family: exo;
+  src: url("../Exo2.0-ExtraLight.otf");
+}
+
+@font-face {
+  font-family: exo;
+  src: url("../Exo2.0-Light.otf");
+  font-weight: bold;
+}
+
+.exo-font {
+  font-family: exo;
+}
+
+.exo-dark-font {
+  font-family: exo;
+  font-weight: bold;
+}
+
+body,
+.pure-g [class*="pure-u"],
+.pure-g-r [class*="pure-u"] {
+  font-family: exo;
+  margin: 0px;
+}
+
+div#nav-bar {
+  border-bottom: 1px solid #565D64;
+}
+div#nav-bar .navbar-logo {
+  display: inline-block;
+}
+div#nav-bar .navbar-logo img {
+  width: 25px;
+  height: 25px;
+}
+div#nav-bar .navbar-logo .navbar-logo-text {
+  font-size: 30px;
+  display: inline-block;
+}
+div#nav-bar .nav-search {
+  display: inline-block;
+  margin-left: 250px;
+  margin-bottom: 10px;
+}
+div#nav-bar ul {
+  float: right;
+}
+div#nav-bar ul li {
+  margin-top: 10px;
+}
+
+.splash {
+  background-color: black;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  z-index: 1;
+  background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%), url("../images/about.jpg");
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0.3)), color-stop(100%, rgba(0, 0, 0, 0.3))), url("../images/about.jpg");
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%), url("../images/about.jpg");
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%), url("../images/about.jpg");
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%), url("../images/about.jpg");
+  /* IE10+ */
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%), url("../images/about.jpg");
+  /* W3C */
+}

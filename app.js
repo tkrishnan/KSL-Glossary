@@ -37,6 +37,8 @@ app.get('/browse', routes.browse);
 app.get('/quiz', routes.quiz);
 
 app.get('/words', routes.words);
+app.get('/about', routes.about);
+app.get('help', routes.help);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));

@@ -40,6 +40,14 @@ exports.words = function (req, res) {
     res.render('words', {title: 'Kenyan Sign Language Directory'})
 };
 
+exports.about = function (req, res) {
+    res.render('about', {title: 'Kenyan Sign Language Directory'})
+};
+
+exports.help = function (req, res) {
+    res.render('help', {title: 'Kenyan Sign Language Directory'})
+};
+
 exports.quiz = function(req,res) {
     var selectMap = {
         biology: 0,

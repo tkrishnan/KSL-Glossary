@@ -1,0 +1,15 @@
+@import "globals";
+
+.splash {
+	background: {
+		color: black;
+		repeat: no-repeat;
+		position: center;
+		size: contain;
+		//image: url('../images/kenyaschoolkidsroad.jpg');
+	}
+
+	z-index: 1;
+
+	@include somewhat-black-bg('../images/about.jpg');
+}

@@ -53,6 +53,7 @@ div#nav-bar ul li {
 
 .title-section {
   margin-top: 20px;
+  margin-bottom: 40px;
 }
 
 .title {
@@ -60,4 +61,8 @@ div#nav-bar ul li {
   font: exo-dark-font;
   font-size: 45px;
   text-align: center;
+}
+
+div#alphabet {
+  margin-top: 30px;
 }
