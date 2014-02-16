@@ -58,7 +58,7 @@ app.get('/about', routes.about);
 app.get('/help', routes.help);
 app.get('/admin', routes.admin);
 
-app.get('/browse/:category', routes.browseCat);
+app.get('/:category', routes.browseCat);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));

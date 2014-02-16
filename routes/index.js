@@ -10,18 +10,16 @@ var Video = mongoose.model('Video', videoSchema);
 
 var getCatVids = function(cat) {
     return function(req, res) {
-        console.log('test');
         Video.videosByCategoryAlpha(cat, function(err, vidObj) {
-            console.log('yay');
             if (err) {
                 res.status(500).render('words',{status: "error"});
             } else {
-                console.log(vidObj);
-                res.status(200).render('words',{
+                res.render('words',{
                     status: 'success',
                     title: cat.charAt(0).toUpperCase() + cat.slice(1) + " Videos",
                     vids: vidObj
                 });
+                return;
             }
         });
     }
