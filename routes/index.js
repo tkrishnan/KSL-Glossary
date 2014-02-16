@@ -3,31 +3,76 @@
  * GET home page.
  */
 
+var videoSchema = require('../schemas/video').videoSchema;
+
+
+var Video = mongoose.model('Video', videoSchema);
+
+function getCatVids = function(cat) {
+    return function(req, res) {
+        Video.videosByCategoryAlpha(cat, function(err, vidObj) {
+            if (err) {
+              res.status(500).json({status: "error"});
+            } else {
+              res.status(200).json({status: 'success', vids: vidObj})
+            }
+        });
+    }
+}
+
 exports.index = function(req, res){
-  res.render('splash', { title: 'Happy Place :)' });
+    res.render('splash', { title: 'Kenyan Sign Language Directory' });
 };
 
-exports.register = function(req, res){
-  res.render('register', {title: 'Sign Up - Happy Place :)'});
+exports.biologyVids = getCatVids('biology');
+
+exports.mathVids = getCatVids('math');
+
+exports.chemistryVids = getCatVids('chemistry');
+
+exports.physicsVids = getCatVids('physics');
+
+exports.browse = function (req,res) {
+    res.render('browse', {title: 'Kenyan Sign Language Directory'})
 };
 
-exports.profileForm = function(req, res) {
-  res.render('profile-form', {
-    title: 'Create Your Profile - Happy Place :)',
-    layout: 'main-no-header'
-  });
+var promiseMap = {
+    biology: Video.videosByCategory('biology'),
+    math: Video.videosByCategory('math'),
+    chemistry: Video.videosByCategory('chemistry'),
+    physics: Video.videosByCategory('physics')
 };
 
-exports.happyPlace = function (req, res) {
-  res.render('happy-place', {
-    title: 'My Happy Place :)',
-    layout: 'main-no-header'
-  });
+exports.quiz = function(req,res) {
+    var selectMap = {
+        biology: 0,
+        math: 0,
+        chemistry: 0,
+        physics: 0
+    }
+    for (var param in req.query ) {
+        if (param in selectMap) {
+            selectMap[param] = 1;
+        }
+    }
+    res.status(200).render('quiz', {status: 'success', selectMap: selectMap});
 };
 
-exports.settings = function(req, res) {
-  res.render('settings', {
-    title: 'Settings - Happy Place :)',
-    layout: 'main-no-header'
-  });
+exports.quizVids = function(req,res) {
+    var promises = [];
+    for (var param in req.query ) {
+        if (param in promiseMap) {
+
+        }
+    }
+    Promise.all(promises).then(function(vidLists) {
+        var allVids = [];
+        allVids = allVids.concat(vidLists);
+
+        res.status(200).json({status: 'success', vids: vidLists});
+    }).catch(function() {
+        res.status(500).json({status: 'err'});
+    }); 
 };
+
+
