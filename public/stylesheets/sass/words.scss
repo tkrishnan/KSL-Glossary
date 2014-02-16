@@ -7,11 +7,42 @@
 
 .title {
 	color: #565D64;
-	font: exo-dark-font;
 	font-size: 45px;
 	text-align: center;
 }
 
 div#alphabet {
 	margin-top:30px;
+}
+
+ul.nolist {
+	display: none;
+	li {
+		list-style-type: none;
+		a {
+			color:#565D64;
+			text-decoration: none;
+		}
+		a:hover {
+			color:#D73320;
+		}
+	}
+}
+
+ul.listed {
+	display: block;
+	li {
+		list-style-type: none;
+		a {
+			color:#565D64;
+			text-decoration: none;
+		}
+		a:hover {
+			color:#D73320;
+		}
+	}
+}
+
+.word-vid {
+	display: none;
 }

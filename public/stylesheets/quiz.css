@@ -57,7 +57,6 @@ div#nav-bar ul li {
 
 .title {
   color: #565D64;
-  font: exo-dark-font;
   font-size: 45px;
   text-align: center;
 }
@@ -73,7 +72,6 @@ div#nav-bar ul li {
 }
 .category .category-title {
   color: white;
-  font: exo-dark-font;
   font-size: 16px;
   text-align: center;
 }

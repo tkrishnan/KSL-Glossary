@@ -58,11 +58,42 @@ div#nav-bar ul li {
 
 .title {
   color: #565D64;
-  font: exo-dark-font;
   font-size: 45px;
   text-align: center;
 }
 
 div#alphabet {
   margin-top: 30px;
+}
+
+ul.nolist {
+  display: none;
+}
+ul.nolist li {
+  list-style-type: none;
+}
+ul.nolist li a {
+  color: #565D64;
+  text-decoration: none;
+}
+ul.nolist li a:hover {
+  color: #D73320;
+}
+
+ul.listed {
+  display: block;
+}
+ul.listed li {
+  list-style-type: none;
+}
+ul.listed li a {
+  color: #565D64;
+  text-decoration: none;
+}
+ul.listed li a:hover {
+  color: #D73320;
+}
+
+.word-vid {
+  display: none;
 }

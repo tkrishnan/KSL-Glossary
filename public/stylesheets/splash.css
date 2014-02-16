@@ -83,7 +83,6 @@ div#nav-bar ul li {
 .splash .logo .logo-text {
   display: inline-block;
   color: white;
-  font: exo-dark-font;
   font-size: 90px;
 }
 .splash .search-bar .search {
@@ -93,7 +92,6 @@ div#nav-bar ul li {
 .splash .browse-link {
   display: inline-block;
   color: white;
-  font: exo-dark-font;
   font-size: 40px;
   margin-left: 250px;
 }
