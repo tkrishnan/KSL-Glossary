@@ -17,7 +17,8 @@ var getCatVids = function(cat) {
                 res.render('words',{
                     status: 'success',
                     title: cat.charAt(0).toUpperCase() + cat.slice(1) + " Videos",
-                    vids: vidObj
+                    vids: vidObj,
+                    category: cat.charAt(0).toUpperCase() + cat.slice(1)
                 });
                 return;
             }
