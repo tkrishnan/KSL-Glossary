@@ -1,0 +1,101 @@
+@import "globals";
+
+.title-section {
+	margin-top: 20px;
+}
+
+.title {
+	color: #565D64;
+	font: exo-dark-font;
+	font-size: 45px;
+	text-align: center;
+}
+
+.category {
+	width: 200px;
+	height: 200px;
+	background: {
+		color: black;
+		repeat: no-repeat;
+		position: center;
+		size: contain;
+	}
+
+	z-index: 1;
+
+	.category-title {
+		color:white;
+		font: exo-dark-font;
+		font-size: 16px;
+		text-align: center;
+	}
+
+}
+
+.category:hover {
+	.category-title {
+		color: #D73320;
+	}
+}
+
+div#all {
+	margin-left:40px;
+	margin-top: 40px;
+	@include somewhat-black-bg('../images/all.jpg');
+}
+
+div#all:hover {
+	@include all-black-bg('../images/all.jpg');
+}
+
+div#bio {
+	margin-left:40px;
+	margin-top: 40px;
+	@include somewhat-black-bg('../images/biology.jpg');
+}
+
+div#bio:hover {
+	@include all-black-bg('../images/biology.jpg');
+}
+
+div#chem {
+	margin-left:40px;
+	margin-top: 40px;
+	@include somewhat-black-bg('../images/chemistry2.jpg');
+}
+
+div#chem:hover {
+	@include all-black-bg('../images/chemistry2.jpg');
+}
+
+div#math {
+	margin-left: 160px;
+	margin-top: 60px;
+	margin-bottom: 60px;
+	@include somewhat-black-bg('../images/math.jpg');
+}
+
+div#math:hover {
+	@include all-black-bg('../images/math.jpg');
+}
+
+div#phys {
+	margin-left: 50px;
+	margin-top: 60px;
+	margin-bottom: 60px;
+	@include somewhat-black-bg('../images/physics.jpg');
+}
+
+div#phys:hover {
+	@include all-black-bg('../images/physics.jpg');
+}
+
+div#quiz-button {
+	margin-left:100px;
+}
+
+.button-xlarge {
+	margin-bottom: 30px;
+	margin-left: 280px;
+	font-size:200%;
+}
